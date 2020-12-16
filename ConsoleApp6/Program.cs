@@ -9,6 +9,7 @@ namespace ConsoleApp6
 {
     class Program
     {
+        //Declaring variables
         public static string blogTopic;
         public static string userName;
         public static DateTime Datepublished = DateTime.Now;
@@ -21,6 +22,7 @@ namespace ConsoleApp6
         {
             try
             {
+                //Recieving details from the user
                 Console.WriteLine("Welcome to this program which will allow you create your blog post in amazing looking form");
 
                 Console.WriteLine("Enter your user name");
@@ -42,7 +44,7 @@ namespace ConsoleApp6
 
                 var path = "C:\\Users\\ChiamakaUzuegbu\\OneDrive - Enov8 Solutions Ltd\\Desktop\\Chiamaka\\" + fileName + ".html";
                 LowLevelWrite(path);
-                Reverseinformation();
+                //Reverseinformation();
             }
             catch (Exception)
             {
@@ -50,7 +52,7 @@ namespace ConsoleApp6
                 throw;
             }
         }
-
+        //stream writer method
       static void LowLevelWrite(string path)
         {
             using (StreamWriter str = new StreamWriter(path))
@@ -71,13 +73,14 @@ namespace ConsoleApp6
                 str.WriteLine("</html>");
                
             
-            //Try to reduce repitition in coding
+            //Note to me:Try to reduce repitition in coding
             }
 
         }
-
+         // Question2
         public static void Reverseinformation()
         {
+            //Using a List
             List<string> newsContent = new List<string>();
             var path = "C:\\Users\\ChiamakaUzuegbu\\OneDrive - Enov8 Solutions Ltd\\Desktop\\Chiamaka\\" + fileName + ".html";
             using (StreamWriter str = new StreamWriter(path))
