@@ -16,6 +16,7 @@ namespace ConsoleApp6
         public static string email;
         public static string Age;
         public static string fileName;
+       
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to this program which will allow you create your blog post in amazing looking form");
@@ -36,13 +37,10 @@ namespace ConsoleApp6
             blogTopic = Console.ReadLine();
             Console.WriteLine("Enter Blog Content here");
             blogContent = Console.ReadLine();
-           
-            var path = "C:\\Users\\ChiamakaUzuegbu\\OneDrive - Enov8 Solutions Ltd\\Desktop\\Chiamaka\\"+ fileName+ ".html";
-            //File.WriteAllText(path, "<h1>" + interest);
-      
 
+            var path = "C:\\Users\\ChiamakaUzuegbu\\OneDrive - Enov8 Solutions Ltd\\Desktop\\Chiamaka\\" + fileName + ".html";
             LowLevelWrite(path);
-            //File.AppendAllText(path, interest);
+            Reverseinformation();
         }
 
       static void LowLevelWrite(string path)
@@ -63,34 +61,45 @@ namespace ConsoleApp6
                 str.WriteLine($"<h6><footer>copyright &copy; 2020 {userName} {Age}, is a tech enthusiast and a seasoned writer with many years of experience and expertise</footer></h6>");
                 str.WriteLine("</body>");
                 str.WriteLine("</html>");
-
-                
-            //List<string> article = new List<string>();
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    Console.WriteLine("Tell us your story");
-            //    string story = Console.ReadLine();
-            //    article.Add(story);
-            //}
-
-            //File.AppendAllLines(path, article);
-
-
-            //File.AppellLines(path, home);
-
-            //LowLevelWrite(path);
-
+               
+            
             //Try to reduce repitition in coding
-
-            Console.WriteLine();
-            Console.ReadLine();
             }
 
         }
 
         public static void Reverseinformation()
         {
+            List<string> newsContent = new List<string>();
+            var path = "C:\\Users\\ChiamakaUzuegbu\\OneDrive - Enov8 Solutions Ltd\\Desktop\\Chiamaka\\" + fileName + ".html";
+            using (StreamWriter str = new StreamWriter(path))
+            {
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Please enter the current news on the blog");
+                string replyNews = Console.ReadLine();
+
+                newsContent.Add(replyNews);      
+
+            }
+            Console.WriteLine("Enter File Name");
+            fileName = Console.ReadLine();
+            Console.WriteLine("This is the right order\n");
+
+            for (int j = 0; j < 3; j++)
+            {
+                Console.WriteLine(newsContent[j]);
+            }
+            Console.WriteLine("This is the reverse order\n");
+            newsContent.Reverse();
+            for (int j = 0; j < 3; j++)
+			{
+                Console.WriteLine(newsContent[j]);
+			}
+            Console.ReadLine();
+            }
 
         } 
+
     }
 }
