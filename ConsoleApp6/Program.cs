@@ -19,28 +19,36 @@ namespace ConsoleApp6
        
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to this program which will allow you create your blog post in amazing looking form");
+            try
+            {
+                Console.WriteLine("Welcome to this program which will allow you create your blog post in amazing looking form");
 
-            Console.WriteLine("Enter your user name");
-            userName = Console.ReadLine();
-            Console.WriteLine("Enter File Name");
-            fileName = Console.ReadLine();
-            Console.WriteLine("Enter your Age");
-            Age = Console.ReadLine();
-            Console.WriteLine("Where do you live?");
-            string home = Console.ReadLine();
-            Console.WriteLine("Enter your email");
-            email = Console.ReadLine();
-            Console.WriteLine("What is your area of interest?");
-            string interest = (Console.ReadLine());
-            Console.WriteLine("Blog Topic");
-            blogTopic = Console.ReadLine();
-            Console.WriteLine("Enter Blog Content here");
-            blogContent = Console.ReadLine();
+                Console.WriteLine("Enter your user name");
+                userName = Console.ReadLine();
+                Console.WriteLine("Enter File Name");
+                fileName = Console.ReadLine();
+                Console.WriteLine("Enter your Age");
+                Age = Console.ReadLine();
+                Console.WriteLine("Where do you live?");
+                string home = Console.ReadLine();
+                Console.WriteLine("Enter your email");
+                email = Console.ReadLine();
+                Console.WriteLine("What is your area of interest?");
+                string interest = (Console.ReadLine());
+                Console.WriteLine("Blog Topic");
+                blogTopic = Console.ReadLine();
+                Console.WriteLine("Enter Blog Content here");
+                blogContent = Console.ReadLine();
 
-            var path = "C:\\Users\\ChiamakaUzuegbu\\OneDrive - Enov8 Solutions Ltd\\Desktop\\Chiamaka\\" + fileName + ".html";
-            LowLevelWrite(path);
-            Reverseinformation();
+                var path = "C:\\Users\\ChiamakaUzuegbu\\OneDrive - Enov8 Solutions Ltd\\Desktop\\Chiamaka\\" + fileName + ".html";
+                LowLevelWrite(path);
+                Reverseinformation();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
       static void LowLevelWrite(string path)
