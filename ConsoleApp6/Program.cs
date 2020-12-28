@@ -46,10 +46,9 @@ namespace ConsoleApp6
                 LowLevelWrite(path);
                 //Reverseinformation();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                Console.Write("You entered an invalid text:" + ex.Message);
             }
         }
         //stream writer method
@@ -80,36 +79,44 @@ namespace ConsoleApp6
          // Question2
         public static void Reverseinformation()
         {
-            //Using a List
-            List<string> newsContent = new List<string>();
-            var path = "C:\\Users\\ChiamakaUzuegbu\\OneDrive - Enov8 Solutions Ltd\\Desktop\\Chiamaka\\" + fileName + ".html";
-            using (StreamWriter str = new StreamWriter(path))
+            try
             {
-            for (int i = 0; i < 3; i++)
+                //Using a List
+                List<string> newsContent = new List<string>();
+                var path = "C:\\Users\\ChiamakaUzuegbu\\OneDrive - Enov8 Solutions Ltd\\Desktop\\Chiamaka\\" + fileName + ".html";
+                using (StreamWriter str = new StreamWriter(path))
+                    str.WriteLine();
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        Console.WriteLine("Please enter the current news on the blog");
+                        string replyNews = Console.ReadLine();
+
+                        newsContent.Add(replyNews);
+
+                    }
+                    Console.WriteLine("Enter File Name");
+                    fileName = Console.ReadLine();
+                    Console.WriteLine("This is the right order\n");
+
+                    for (int j = 0; j < 3; j++)
+                    {
+                        Console.WriteLine(newsContent[j]);
+                    }
+                    Console.WriteLine("This is the reverse order\n");
+                    newsContent.Reverse();
+                    for (int j = 0; j < 3; j++)
+                    {
+                        Console.WriteLine(newsContent[j]);
+                    }
+                    Console.ReadLine();
+                }
+            }
+
+            catch (Exception ex)
             {
-                Console.WriteLine("Please enter the current news on the blog");
-                string replyNews = Console.ReadLine();
-
-                newsContent.Add(replyNews);      
-
+                Console.Write("You entered an invalid text:" + ex.Message);
             }
-            Console.WriteLine("Enter File Name");
-            fileName = Console.ReadLine();
-            Console.WriteLine("This is the right order\n");
-
-            for (int j = 0; j < 3; j++)
-            {
-                Console.WriteLine(newsContent[j]);
-            }
-            Console.WriteLine("This is the reverse order\n");
-            newsContent.Reverse();
-            for (int j = 0; j < 3; j++)
-			{
-                Console.WriteLine(newsContent[j]);
-			}
-            Console.ReadLine();
-            }
-
         } 
 
     }
